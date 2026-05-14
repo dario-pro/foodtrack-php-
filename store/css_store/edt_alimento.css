@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; 
+  font-family: sans-serif;
+}
+/* ----- CONTENEDOR GENERAL DEL FORMULARIO ----- */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', sans-serif;
+  
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-out;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+ 
+}
+
+.titulo-editar{
+  margin: 0;
+  color: #2e2e2e;
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ----- FORMULARIO COMO GRID ----- */
+#formAlimentos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 20px;
+}
+
+/* ----- GRUPO DE INPUTS ----- */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2; /* Ocupa toda la fila por defecto */
+  
+  margin-bottom: 3px !important;
+}
+.input-group.fecha-caducidad {
+  grid-column: 3;
+}
+
+.input-group.descuento {
+  grid-column: 3;
+}
+/* Puedes personalizar cada grupo por subclase */
+.input-group.precio {
+  grid-column: 1; /* lado izquierdo */
+}
+
+.input-group.stock {
+  grid-column: 2; /* lado derecho */
+}
+
+.input-group.estado{
+    grid-column: 3;
+}
+
+/* Imagen y botones ocupan toda la fila */
+.input-group.imagen{
+    grid-column: span 3;
+}
+.btn-group {
+  grid-column: span 3;
+}
+
+/* ----- LABELS ----- */
+.input-group label {
+  margin-bottom: 6px;
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  
+}
+
+/* ----- INPUTS Y SELECTS ----- */
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 4px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #f9f9f9;
+  transition: border 0.3s, background-color 0.3s;
+  
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #007f5f;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 127, 95, 0.2);
+}
+
+/* ----- SELECT PERSONALIZADO ----- */
+#estado {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 0l5 6 5-6z" fill="%23999"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+/* Placeholder gris para option disabled */
+#estado option[disabled] {
+  color: #888;
+}
+
+/* ----- FILE UPLOAD ----- */
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  margin-bottom: 10px;
+  
+}
+.file-upload img {
+  max-width: 120px;
+  max-height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.file-upload input[type="file"] {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#preview {
+  max-width: 150px;
+  max-height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/* ----- BOTONES ----- */
+.btn-group {
+  display: flex;  
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.btn {
+  flex: 1; /* Este se encarga de que ambos ocupen 50% automáticamente */
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.btn-success {
+  background-color: #007f5f;
+}
+
+.btn-success:hover {
+  background-color: #006b4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 127, 95, 0.2);
+}
+
+.btn-secondary {
+  text-align: center;
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(90, 98, 104, 0.2);
+}
+
+/* ----- TEXTO DE ERROR ----- */
+.text-danger {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* ----- ANIMACIÓN ----- */
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

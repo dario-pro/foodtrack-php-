@@ -1,0 +1,176 @@
+/* ===============================
+   VIDEO EDUCATIVO Section Styles
+================================= */
+
+/* Contenedor general */
+.educational-video-section {
+  padding: 60px 20px;
+  background-color: #f7f9f4; /* Verde muy suave para sensación de frescura */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Contenedor interno */
+.educational-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LADO IZQUIERDO: Video */
+.video-left {
+  flex: 1 1 500px;
+}
+
+.video-left .video-tag {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.video-left h2 {
+  font-size: 28px;
+  margin: 10px 0 15px;
+}
+
+.video-left .video-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Wrapper video */
+.video-wrapper {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+}
+
+/* Pie de video */
+.video-caption {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* LADO DERECHO: Contenido */
+.video-right {
+  flex: 1 1 400px;
+}
+
+.video-right h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2e7d32; /* verde oscuro */
+}
+
+.video-benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.video-benefits li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.video-benefits li i {
+  color: #4caf50;
+  margin-right: 10px;
+}
+
+/* Estadísticas */
+.video-stats {
+  background-color: #e8f5e9; /* verde muy suave */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.video-stats h4 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  text-align: center;
+}
+
+.stats-grid div {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  font-weight: bold;
+  color: #333;
+}
+
+/* Subscribe box */
+.subscribe-box {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.subscribe-box h4 {
+  margin-bottom: 10px;
+}
+
+.subscribe-box p {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.subscribe-box .btn-success {
+  background-color: #2e7d32;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.subscribe-box .btn-success:hover {
+  background-color: #1b5e20;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .educational-container {
+    flex-direction: column;
+  }
+
+  .video-left, .video-right {
+    flex: 1 1 100%;
+  }
+
+  .video-left h2, .video-right h3 {
+    font-size: 22px;
+  }
+
+  .video-benefits li {
+    font-size: 15px;
+  }
+}

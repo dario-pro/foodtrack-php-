@@ -1,0 +1,475 @@
+.root{
+    --primary-color: #0072bb;
+    --secondary-color: #f39c12;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --hover-color: #99cce5;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes eslasubida {
+   from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Container principal */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    width: 100%;
+    height: 100vh;
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Formulario */
+.form-container {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+.form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.register-form {
+    margin-bottom: 20px;
+    padding-bottom: 10px;   
+}
+
+.titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    
+}
+
+.title_resgister{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    
+}
+/* Redes sociales */
+.social-networks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+          
+}
+.register-form .social-networks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+     
+}
+.register-form .social-networks ion-icon{
+    font-size: 1rem;
+    border: 1px solid #aaaa;
+    border-radius: 6px;
+    padding: 3px;
+    cursor: pointer;
+    color: #333;
+    
+}
+.social-networks ion-icon {
+    font-size: 1.2rem;
+    border: 1px solid #aaaa;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+    color: #333;
+    
+        }
+.social-networks ion-icon:hover {
+    background: #f39c12;
+    color: white;
+    transform: translateY(-6px);
+    transition: all 0.4s ease;
+}
+
+/* Inputs */
+.input-group {
+    width: 80%;
+    height: 35px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    background-color: #ecf0f1;
+    border-radius: 3px;
+}
+.register-form .input-group {
+    height: 28px;
+    margin-bottom: 2px;
+}
+.input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: #ecf0f1;
+    color: var(--text-color);
+}
+.input-group:focus-within {
+    border: 1px solid #000000;
+}
+/* estilos de los electores */
+/* Afecta solo al select dentro del formulario de registro y grupo rol */
+
+form.register-form .input-select.rol select.select-input,
+form.register-form .input-select.local-fields select.select-input {
+    appearance: none;
+    background-color: #ecf0f1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1px 12px;color: #000;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    outline: none;
+   
+
+    /* Flechita personalizada */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 20 20"><polygon fill="%23999" points="0,0 20,0 10,10"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    grid-column: span 2;
+    align-self: center;
+}
+
+/* Hover y focus solo para ese select */
+form.register-form .input-select.rol select.select-input:hover , form.register-form .input-select.local-fields select.select-input:hover {
+    border-color: #888;
+}
+
+form.register-form .input-select.rol select.select-input:focus , form.register-form .input-select.local-fields select.select-input:focus {
+    border-color: #000000;
+    
+}
+
+/* Placeholder deshabilitado (primera opción) */
+form.register-form .input-select.rol select.select-input option:first-child {
+    color: #999;
+}
+/* estilos para la imagen */
+.file-upload {
+  display: flex;             /* aquí sí flex para que funcione flex-direction */
+  flex-direction: column;
+  gap: 6px;
+  grid-column: span 2;       /* ocupa las dos columnas del grid padre */
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  
+  width: 100%;               /* ocupa todo el ancho disponible */
+  box-sizing: border-box;    /* evita que el borde rompa el tamaño */
+}
+
+.file-upload label{
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.file-upload input[type="file"] {
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+.hint {
+  display: block;
+  font-size: 11px;
+  color: #6c757d;   /* gris elegante */
+  margin-top: 4px;
+  font-style: italic;
+}
+/* ===== ESTILOS PARA MENSAJES DE ERROR ===== */
+
+/* Agregar espacio extra cuando hay error */
+.input-group.has-error {
+    margin-bottom: 10px !important; /* Más espacio para el mensaje de error */
+}
+
+.input-select.has-error {
+    margin-bottom: 10px !important;
+}
+.input-group.emailLogin-error {
+    margin-bottom: 20px !important; /* Más espacio para el mensaje de error */
+}
+
+/* Estilo del mensaje de error */
+.error-message {
+    position: absolute;
+    bottom: -18px; /* Posiciona justo debajo del input */
+    left: 15px; /* Alineado con el contenido del input */
+    color: #e74c3c;
+    font-size: 11px;
+    font-weight: 500;
+    display: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2; 
+    z-index: 100;
+}
+.error-telefono{
+    position:absolute; 
+    bottom: 28px; 
+    left:15px; 
+    color:#e74c3c; 
+    font-size: 11px;
+    font-weight: 500;
+    display: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2; 
+    z-index: 100;
+    margin-bottom: 0px; /* Asegura que no haya margen extra */
+}
+/* Cuando el error está visible */
+
+.input-group.telefono.input-error {
+  border: 1px solid red !important;
+  padding: 5px; /* opcional, para que no corte el borde con el contenido */
+}
+/* Mostrar el error */
+.error-message.email ,.error-message.local ,.error-message.clave{
+    display: block;
+}
+
+/* Opcional: cambiar apariencia del input cuando hay error */
+.input-group.has-error {
+    border: 1px solid #e74c3c !important;
+    background: #ecf0f1 !important;
+}
+
+.input-select.has-error .select-input ,.input-group.emailLogin-error {
+    border: 1px solid #e74c3c !important;
+    background: #ecf0f1 !important;
+}
+.input-group.telefono input.input-error {
+  border: 1px solid #e74c3c !important;
+}
+.input-group.input-error ion-icon {
+    color: #e74c3c !important; /* rojo para el icono */
+}
+/* Opcional: cambiar color del icono cuando hay error */
+.input-group.has-error ion-icon ,.input-group.emailLogin-error ion-icon,.input-group.clave-error ion-icon  {
+    color: #e74c3c !important;
+}
+
+
+/* Asegurar que el input-group tenga position relative */
+.input-group {
+    position: relative;
+}
+
+.input-select {
+    position: relative;
+}
+
+/* Botones */
+.form-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.btn-guardar,
+.btn-iniciar {
+    width: 170px;
+    height: 45px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #526D82, #9DB2BF);
+    color: white;
+    font-weight: bold;
+}
+.btn-guardar:hover,
+.btn-iniciar:hover {
+    background: linear-gradient(45deg, #0072bb, #99cce5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+/* Animación de formularios */
+.register-form {
+    transform: translateX(-100%);
+}
+.container.active .login-form {
+    transform: translateX(100%);
+}
+.container.active .register-form {
+    transform: translateX(0%);
+}
+
+/* Bienvenida lateral */
+.container-welcome {
+    background: linear-gradient(45deg, #0072bb, #f39c12);
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    border-radius: 40% 0 0 40%;
+    color: #fff;
+}
+.welcome {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 40px;
+    transition: transform 0.5s ease-in-out;
+}
+.welcome-login {
+    transform: translateX(100%);
+}
+.container-welcome h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+.container-welcome p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+.container-welcome button {
+    border: 1px solid white;
+    background: #fff;
+    color: #2c3e50;
+    font-weight: bold;
+}
+.container.active .welcome-login {
+    transform: translateX(0);
+}
+.container.active .welcome-register {
+    transform: translateX(-100%);
+}
+.container.active .container-welcome {
+    transform: translateX(0);
+    border-radius: 0 40% 40% 0;
+}
+
+/* Responsive ajustes */
+@media (min-width: 768px) {
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .register-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding-right: 18px;
+    padding-bottom: 20px;
+    width: auto;
+  }
+
+  .register-form .titulo,
+  .register-form .title_resgister {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .register-form .social-networks.icon {
+    grid-column: span 2;
+    justify-content: center;
+    margin: 5px 0;   
+  }
+
+  .register-form .form-button,
+  .register-form .form-button.btnregistarr {
+    grid-column: span 2;
+    justify-content: center;
+  }
+
+  .register-form .btn-guardar {
+    min-width: 150px;
+    padding: 12px 30px;
+  }
+
+  .register-form .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;    
+  }
+
+  .register-form .input-group input,
+  .register-form .input-group .select-input {
+    flex: 1;
+  }
+
+  .register-form .input-select.rol { grid-column: span 2; }
+  .register-form .input-select.local-fields{ grid-column: 2; }
+  .register-form .input-group .Nlocal { grid-column: 1; }
+  .register-form .input-group.nombre{ grid-column: 1; }
+  .register-form .input-group .apellido { grid-column: span 2; }
+  .register-form .input-group.email { grid-column: span 2; }
+  .register-form .input-group.clave { grid-column: span 2; }
+  .register-form .input-group.direccion { grid-column: span 2; }
+  .register-form .input-group.direccion.comerciante { grid-column: 1; }
+  .register-form .input-select.sector{ grid-column: 2; }
+  .register-form .input-group.telefono { grid-column: span 2; }
+  .register-form .input-group.img { grid-column: 1; }
+.register-form .form-button.btnregistarr { grid-column: span 2;  display: flex; justify-content: center; align-items: center;
+margin-top: 1px;   
+}
+
+
+  .register-form {
+    row-gap: 2px;
+    column-gap: 2px;    
+  }
+
+  .register-form .titulo { margin-bottom: 15px; }
+ 
+}

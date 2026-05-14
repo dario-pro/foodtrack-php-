@@ -1,0 +1,304 @@
+/* estilos de todas las tablas con las mismas clases */
+.texto-apagado {
+  opacity: 0.5;
+}
+.tachado {
+  text-decoration: line-through;
+}
+.resaltado {
+  background-color: #e3f2fd;
+}
+.enlace-azul {
+  color: #1976d2;
+  text-decoration: none;
+}
+.interruptor {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.interruptor input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.deslizador {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.deslizador:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .deslizador {
+  background-color: #2196f3;
+}
+input:checked + .deslizador:before {
+  transform: translateX(26px);
+}
+.checkbox-fila {
+  accent-color: blue;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f5f5f5;
+}
+.estado-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.estado-fresco {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+.estado-apto {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+.estado-proximo {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+.estado-caducado {
+  background-color: #ffebee;
+  color: #c62828;
+}
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+.error {
+  color: #f44336;
+  text-align: center;
+  padding: 20px;
+}
+.producto-imagen {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.imagen-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+/* botones de accion */
+/* Estilos para botones de acciones */
+.acciones-container {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-accion {
+  padding: 6px 10px;
+  margin: 0 2px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  transition: all 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-editar {
+  color: #6c757d;
+}
+
+.btn-editar:hover {
+  background-color: #e9ecef;
+  color: #495057;
+  transform: scale(1.1);
+}
+.btn-eliminar {
+  border: none; /* Sin borde */
+  background: none; /* Sin fondo */
+  padding: 0; /* Sin padding */
+  cursor: pointer; /* Cambiar el cursor a puntero */
+}
+/* editar el icno */
+.material-symbols-outlined {
+  font-size: 24px; /* Tamaño del ícono */
+  color: red; /* Color del ícono */
+  background: none; /* Sin fondo */
+  padding: 0; /* Sin padding */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambiar el cursor cuando pasa sobre el ícono */
+  transition: color 0.2s, transform 0.2s; /* Transición suave para color y tamaño */
+}
+.material-symbols-outlined:hover {
+  color: darkred; /* Color del ícono al pasar el cursor */
+  transform: scale(1.3);
+}
+
+.deshabilitado {
+  pointer-events: none; /* Deshabilita la interacción con los elementos dentro del contenedor */
+  opacity: 0.6; /* Hace que el contenedor y sus elementos se vean atenuados */
+}
+
+/* botonoes de activar checkbox */
+.container-btn-acciones {
+ margin: 5px 0 0 20px;
+  position: fixed;
+  left: 20px;
+}
+.btn-accion-activar {
+  padding: 10px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+.btn-accion-activar:hover {
+  transform: scale(1.1);
+}
+/*==========paginacion y busqueda ==========*/
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.busqueda {
+  padding: 10px;
+  margin-left: 30px;
+  font-size: 14px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* estilos de paginacion */
+.paginacion {
+  text-align: center;
+  margin-top: 20px;
+  
+}
+
+.paginacion a {
+  display: inline-block; 
+  margin: 0 6px;
+  padding: 6px 12px;
+  background-color: #e4e4e4;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.paginacion a:hover {
+   transform: scale(1.3);
+}
+
+.paginacion .actual {
+  font-weight: bold;
+  background-color: #2196f3;
+  color: white;
+}
+
+/*========== FIN paginacion y busqueda ==========*/
+/* ==== Estilos Modal para editar alimentos ==== */
+.custom-modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+  /* Centrar el modal */
+  justify-content: center;
+  align-items: center;
+}
+.custom-modal.show {
+  display: flex;
+}
+.custom-modal-content {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  height: 95vh; /* Altura más manejable */
+  max-height: 600px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  position: relative;
+}
+
+.custom-modal-content iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  margin-top: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.custom-close {
+  color: #040404ff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-close:hover {
+  color: #000;
+  transform: scale(1.3);
+  transition: all 0.3s ease;
+}
